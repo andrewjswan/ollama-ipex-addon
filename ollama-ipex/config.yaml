@@ -1,6 +1,6 @@
 name: "Ollama IPEX"
 description: "Get up and running with large language models."
-version: "0.5.5"
+version: "0.5.7"
 slug: "ollama-ipex"
 codenotary: notary@home-assistant.io
 arch:
@@ -10,7 +10,7 @@ url: https://ollama.com
 map:
   - config:rw
   - share:rw
-# image: docker.io/visitsb/ollama-ipex
+image: ghcr.io/andrewjswan/ollama-ipex-addon-{arch}
 init: false
 ingress: true
 legacy: true
