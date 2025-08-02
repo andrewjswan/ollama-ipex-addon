@@ -1,0 +1,6 @@
+---
+build_from:
+  aarch64: docker.io/phusion/baseimage:noble-1.0.2
+  amd64: docker.io/phusion/baseimage:noble-1.0.2
+codenotary:
+  signer: andrewjswan@addons.community
