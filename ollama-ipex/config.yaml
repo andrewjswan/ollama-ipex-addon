@@ -1,6 +1,6 @@
 name: "Ollama IPEX"
 description: "Get up and running with large language models."
-version: "0.5.7"
+version: "2025.8.1"
 slug: "ollama-ipex"
 codenotary: notary@home-assistant.io
 arch:
