@@ -11,7 +11,11 @@
 [![GitHub License](https://img.shields.io/github/license/andrewjswan/ollama-ipex-addon?color=blue)](https://github.com/andrewjswan/ollama-ipex-addon/blob/master/LICENSE)
 [![StandWithUkraine](https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/badges/StandWithUkraine.svg)](https://github.com/vshymanskyy/StandWithUkraine/blob/main/docs/README.md)
 
-Ollama Portable on Intel GPU with IPEX-LLM.
+**Ollama IPEX** - [Ollama](https://ollama.com/) Portable on Intel GPU with [IPEX-LLM](https://github.com/intel/ipex-llm).
+
+## Architecture
+
+![Supports amd64 Architecture][amd64-shield] ![Supports aarch64 Architecture][aarch64-shield] ![Supports armv7 Architecture][armv7-shield] ![Supports armhf Architecture][armhf-shield] ![Supports i386 Architecture][i386-shield]
 
 ## Model Directory
 
@@ -32,3 +36,9 @@ If you want to change the model, delete the integration (not the addon!) and res
 ## Note on the UI Link
 
 The UI Link is only there to check if the API of ollama is available. There is no chat functionality included in the official image of ollama.
+
+[amd64-shield]: https://img.shields.io/badge/amd64-yes-blue.svg
+[aarch64-shield]: https://img.shields.io/badge/aarch64-yes-blue.svg
+[armv7-shield]: https://img.shields.io/badge/armv7-no-red.svg
+[armhf-shield]: https://img.shields.io/badge/armhf-no-red.svg
+[i386-shield]: https://img.shields.io/badge/i386-no-red.svg
