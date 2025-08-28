@@ -35,7 +35,8 @@ If you want to change the model, delete the integration (not the addon!) and res
 
 ## Note on the UI Link
 
-The UI Link is only there to check if the API of ollama is available. There is no chat functionality included in the official image of ollama.
+> [!NOTE]
+> The UI Link is only there to check if the API of ollama is available. There is no chat functionality included in the official image of ollama.
 
 [amd64-shield]: https://img.shields.io/badge/amd64-yes-blue.svg
 [aarch64-shield]: https://img.shields.io/badge/aarch64-yes-blue.svg
