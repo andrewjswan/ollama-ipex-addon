@@ -1,4 +1,15 @@
-# Ollama IPEX Addon for Home Assistant
+<div align="center">
+<h1>Ollama IPEX Add-on for Home Assistant</h1>
+</div>
+
+## General
+
+[![ha addon_badge](https://img.shields.io/badge/HA-Addon-blue.svg)](https://developers.home-assistant.io/docs/add-ons)
+[![Ollama IPEX](https://img.shields.io/static/v1?label=Ollama&message=IPEX&color=blue)](https://github.com/andrewjswan/ollama-ipex-addon/)
+[![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/andrewjswan/ollama-ipex-addon/build.yml?logo=github)](https://github.com/andrewjswan/ollama-ipex-addon/actions)
+[![GitHub release (latest SemVer including pre-releases)](https://img.shields.io/github/v/release/andrewjswan/ollama-ipex-addon?include_prereleases)](https://github.com/andrewjswan/ollama-ipex-addon/blob/master/esphome-update/CHANGELOG.md)
+[![GitHub License](https://img.shields.io/github/license/andrewjswan/ollama-ipex-addon?color=blue)](https://github.com/andrewjswan/ollama-ipex-addon/blob/master/LICENSE)
+[![StandWithUkraine](https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/badges/StandWithUkraine.svg)](https://github.com/vshymanskyy/StandWithUkraine/blob/main/docs/README.md)
 
 Ollama Portable on Intel GPU with IPEX-LLM.
 
