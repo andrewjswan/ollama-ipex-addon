@@ -51,16 +51,16 @@ RUN apt update && \
 # Intel GPU compute user-space drivers
 RUN mkdir -p /tmp/gpu && \
     cd /tmp/gpu && \
-    echo "Downloading oneAPI Level Zero Loader v1.22.4..." && \
-    wget https://github.com/oneapi-src/level-zero/releases/download/v1.22.4/level-zero_1.22.4+u24.04_amd64.deb && \
-    echo "Downloading Intel Graphics Compiler v2.14.1..." && \
-    wget https://github.com/intel/intel-graphics-compiler/releases/download/v2.14.1/intel-igc-core-2_2.14.1+19448_amd64.deb && \
-    wget https://github.com/intel/intel-graphics-compiler/releases/download/v2.14.1/intel-igc-opencl-2_2.14.1+19448_amd64.deb && \
-    echo "Downloading Intel Compute Runtime v25.27..." && \
-    wget https://github.com/intel/compute-runtime/releases/download/25.27.34303.5/intel-ocloc_25.27.34303.5-0_amd64.deb && \
-    wget https://github.com/intel/compute-runtime/releases/download/25.27.34303.5/intel-opencl-icd_25.27.34303.5-0_amd64.deb && \
-    wget https://github.com/intel/compute-runtime/releases/download/25.27.34303.5/libigdgmm12_22.7.2_amd64.deb && \
-    wget https://github.com/intel/compute-runtime/releases/download/25.27.34303.5/libze-intel-gpu1_25.27.34303.5-0_amd64.deb && \
+    echo "Downloading oneAPI Level Zero Loader v1.24.2..." && \
+    wget https://github.com/oneapi-src/level-zero/releases/download/v1.24.2/level-zero_1.24.2+u24.04_amd64.deb && \
+    echo "Downloading Intel Graphics Compiler v2.16.0..." && \
+    wget https://github.com/intel/intel-graphics-compiler/releases/download/v2.16.0/intel-igc-core-2_2.16.0+19683_amd64.deb && \
+    wget https://github.com/intel/intel-graphics-compiler/releases/download/v2.16.0/intel-igc-opencl-2_2.16.0+19683_amd64.deb && \
+    echo "Downloading Intel Compute Runtime v25.31..." && \
+    wget https://github.com/intel/compute-runtime/releases/download/25.31.34666.3/intel-ocloc_25.31.34666.3-0_amd64.deb && \
+    wget https://github.com/intel/compute-runtime/releases/download/25.31.34666.3/intel-opencl-icd_25.31.34666.3-0_amd64.deb && \
+    wget https://github.com/intel/compute-runtime/releases/download/25.31.34666.3/libigdgmm12_22.8.1_amd64.deb && \
+    wget https://github.com/intel/compute-runtime/releases/download/25.31.34666.3/libze-intel-gpu1_25.31.34666.3-0_amd64.deb && \
     dpkg -i --force-all *.deb && \
     rm *.deb
 
