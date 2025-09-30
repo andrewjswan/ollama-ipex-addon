@@ -1,5 +1,12 @@
 # Changelog
 
+## [2025.9.1] 2025-09-30
+
+### Update:
+
+* Intel Graphics Compiler v2.18.0
+* Intel Compute Runtime v25.35
+
 ## [2025.8.1] 2025-08-28
 
 ### Update:
