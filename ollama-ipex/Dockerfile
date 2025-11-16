@@ -5,7 +5,7 @@
 # See https://github.com/phusion/baseimage-docker/releases for
 # a list of version numbers.
 ARG BUILD_FROM
-FROM $BUILD_FROM
+FROM ${BUILD_FROM}
 
 ENV DEBIAN_FRONTEND=noninteractive
 
@@ -41,26 +41,28 @@ LABEL \
 CMD ["/sbin/my_init"]
 
 # Base packages
-RUN apt update && \
-    apt install --no-install-recommends -q -y \
-    software-properties-common \
-    ca-certificates \
-    wget \
-    ocl-icd-libopencl1
+RUN \
+    apt update \
+    && apt install --no-install-recommends -q -y \
+       software-properties-common \
+       ca-certificates \
+       wget \
+       ocl-icd-libopencl1
 
 # Intel GPU compute user-space drivers
-RUN mkdir -p /tmp/gpu && \
+RUN \
+    mkdir -p /tmp/gpu && \
     cd /tmp/gpu && \
-    echo "Downloading oneAPI Level Zero Loader v1.24.2..." && \
-    wget https://github.com/oneapi-src/level-zero/releases/download/v1.24.2/level-zero_1.24.2+u24.04_amd64.deb && \
-    echo "Downloading Intel Graphics Compiler v2.18.0..." && \
-    wget https://github.com/intel/intel-graphics-compiler/releases/download/v2.18.5/intel-igc-core-2_2.18.5+19820_amd64.deb && \
-    wget https://github.com/intel/intel-graphics-compiler/releases/download/v2.18.5/intel-igc-opencl-2_2.18.5+19820_amd64.deb && \
-    echo "Downloading Intel Compute Runtime v25.35..." && \
-    wget https://github.com/intel/compute-runtime/releases/download/25.35.35096.9/intel-ocloc_25.35.35096.9-0_amd64.deb && \
-    wget https://github.com/intel/compute-runtime/releases/download/25.35.35096.9/intel-opencl-icd_25.35.35096.9-0_amd64.deb && \
-    wget https://github.com/intel/compute-runtime/releases/download/25.35.35096.9/libigdgmm12_22.8.1_amd64.deb && \
-    wget https://github.com/intel/compute-runtime/releases/download/25.35.35096.9/libze-intel-gpu1_25.35.35096.9-0_amd64.deb && \
+    echo "Downloading oneAPI Level Zero Loader v1.26.0..." && \
+    wget https://github.com/oneapi-src/level-zero/releases/download/v1.26.0/level-zero_1.26.0+u24.04_amd64.deb && \
+    echo "Downloading Intel Graphics Compiler v2.20.3..." && \
+    wget https://github.com/intel/intel-graphics-compiler/releases/download/v2.20.3/intel-igc-core-2_2.20.3+19972_amd64.deb && \
+    wget https://github.com/intel/intel-graphics-compiler/releases/download/v2.20.3/intel-igc-opencl-2_2.20.3+19972_amd64.deb && \
+    echo "Downloading Intel Compute Runtime v25.40..." && \
+    wget https://github.com/intel/compute-runtime/releases/download/25.40.35563.4/intel-ocloc_25.40.35563.4-0_amd64.deb && \
+    wget https://github.com/intel/compute-runtime/releases/download/25.40.35563.4/intel-opencl-icd_25.40.35563.4-0_amd64.deb && \
+    wget https://github.com/intel/compute-runtime/releases/download/25.40.35563.4/libigdgmm12_22.8.2_amd64.deb && \
+    wget https://github.com/intel/compute-runtime/releases/download/25.40.35563.4/libze-intel-gpu1_25.40.35563.4-0_amd64.deb && \
     dpkg -i --force-all *.deb && \
     rm *.deb
 
@@ -68,14 +70,23 @@ RUN mkdir -p /tmp/gpu && \
 ARG IPEXLLM_RELEASE_REPO=ipex-llm/ipex-llm
 ARG IPEXLLM_RELEASE_VERSON=v2.3.0-nightly
 ARG IPEXLLM_PORTABLE_ZIP_FILENAME=ollama-ipex-llm-2.3.0b20250725-ubuntu.tgz
-RUN cd / && \
+RUN \
+    cd / && \
     echo "Downloading Ollama Portable on Intel GPU with IPEX-LLM..." && \
     wget https://github.com/${IPEXLLM_RELEASE_REPO}/releases/download/${IPEXLLM_RELEASE_VERSON}/${IPEXLLM_PORTABLE_ZIP_FILENAME} && \
     tar xvf ${IPEXLLM_PORTABLE_ZIP_FILENAME} --strip-components=1 -C / && \
     rm ${IPEXLLM_PORTABLE_ZIP_FILENAME}
 
 # Clean up APT when done.
-RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+RUN \
+    apt-get clean \
+    && rm -fr \
+       /tmp/* \
+       /var/tmp/* \
+       /var/cache/* \
+       /var/lib/apt/lists/* \
+       /var/log/*.log \
+       /var/log/apt
 
 WORKDIR /
 
