@@ -1,6 +1,6 @@
 name: "Ollama IPEX"
 description: "Get up and running with large language models."
-version: "2025.11.1"
+version: "2026.3.1"
 slug: "ollama-ipex"
 
 arch:
