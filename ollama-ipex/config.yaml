@@ -1,6 +1,6 @@
 name: "Ollama IPEX"
 description: "Get up and running with large language models."
-version: "2026.3.1"
+version: "2026.4.1"
 slug: "ollama-ipex"
 
 arch:
@@ -13,7 +13,7 @@ map:
   - config:rw
   - share:rw
 
-image: ghcr.io/andrewjswan/ollama-ipex-addon-{arch}
+image: ghcr.io/andrewjswan/ollama-ipex-addon
 
 startup: application
 init: false
